@@ -22,7 +22,7 @@ Zoals vermeld is het project nog niet af, in de issues van dit project staan ver
 Je kunt daarvoor https://github.com/gavinr/github-csv-tools gebruiken om issues.csv te importeren.
 * Ieder lid van de projectgroep clonet het geforkte project naar een lokaal project.
 * Vergeet niet om lokaal een een npm install te doen.
-* In keytext_AANPASSEN.js (NOOIT UPLOADEN NAAR GITHUB) is een key voor MapboxGL nodig: https://docs.mapbox.com/help/glossary/access-token/
+* In keytext.js (NOOIT UPLOADEN NAAR GITHUB) is een key voor MapboxGL nodig: https://docs.mapbox.com/help/glossary/access-token/
 * Je werkt aan dit project volgens de scrum-methode. Bepaal de rollen:
   - scrummaster en developer
   - developers

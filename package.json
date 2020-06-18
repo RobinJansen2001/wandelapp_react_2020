@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://www.dennisvanriet/wandelapp/",
   "dependencies": {
+    "axios": "^0.19.2",
     "jquery": "^3.4.1",
     "mapbox-gl": "^1.9.1",
     "react": "^16.13.1",
