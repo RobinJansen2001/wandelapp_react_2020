@@ -38,7 +38,7 @@ class UploadRoute extends Component {
     return (
       <div>
         <input type="file" onChange={this.onChangeHandler} />
-        <button type="button" onClick={this.fileUploadHandler}>Upload File</button>
+        <button type="button" id="upload" onClick={this.fileUploadHandler}>Upload Your GPX File</button>
       </div>
     );
   }

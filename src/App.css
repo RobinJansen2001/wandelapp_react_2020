@@ -24,3 +24,12 @@ body {
 #root > div:nth-child(4) {
   height:10vh;
 }
+
+#upload{
+  border-style: hidden;
+  height: 30px;
+}
+
+#upload:hover{
+  background-color: white;
+}
