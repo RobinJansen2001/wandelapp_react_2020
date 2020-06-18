@@ -5,10 +5,6 @@ import MapRoute from "./MapRoute";
 import Routes from "./Routes";
 import Info from "./Info";
 import UploadRoute from './UploadRoute';
-// import "~@feizheng/react-modal-manager/dist/style.scss";
-// import ReactModalManager, { connect } from '../src/main';
-// import './assets/style.scss';
-
 
 class App extends Component {
   constructor(props) {

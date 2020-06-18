@@ -10,7 +10,7 @@ const Map = ReactMapboxGl({
   accessToken: mapkey()
 });
 
-
+// mapboxgl opzoeken
 class MapRoute extends Component {
   constructor(props) {
     super(props);

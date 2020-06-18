@@ -1,19 +1,25 @@
 import React, {Component} from 'react';
-import {getroutesjson} from './rest_routes';
+import {getroutesjson,deleteRoute} from './rest_routes';
+
+
+
+//this.state.routes , array , met de id kan ver
+// 2 ver uit de wandelapp back-end  in
 
 class Routes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      routes: []
+        routes: [],
+        remoteserver: 'https://wandelappbackend-v5.herokuapp.com',
+        cuid: 'test'
     };
   }
 
   getRoutes() {
     //Get routes from server
-    const cuid = 'test';
-    const remoteServer = 'https://wandelappbackend-v5.herokuapp.com';
-    getroutesjson(remoteServer + '/routes?cuid=' + cuid)
+
+    getroutesjson(this.state.remoteserver + '/routes?cuid=' + this.state.cuid)
       .then(
         (routesjson) => {
           this.setState({routes: routesjson});
@@ -49,7 +55,23 @@ class Routes extends Component {
 
   selectRoute = (data) => {
     this.props.onRouteSelect(data.json);
-  }
+  };
+
+    deleteHandler(id) {
+      console.log(id);
+
+      let routes = this.state.routes.filter(route => {
+        console.log(route);
+        return route.data._id !== id
+
+      });
+      this.setState({
+          routes : routes
+      });
+      const x = deleteRoute(this.state.remoteserver,id,this.state.cuid);
+        console.log(x);
+    };
+
 
   render() {
     const style = {
@@ -59,9 +81,16 @@ class Routes extends Component {
       <div style={style}>
         <ul>
           {this.state.routes.map(route =>
-            <li onClick={this.selectRoute.bind(this, route.data)} key={route.data._id}>{route.data.json.features[0].properties.name}</li>
+            <li onClick={this.selectRoute.bind(this, route.data)} key={route.data._id}>{route.data.json.features[0].properties.name}>
+                <button onClick={this.deleteHandler.bind(this, route.data._id)}>Delete</button>
+
+
+            </li>
+
           )}
+
         </ul>
+
       </div>
     );
   }

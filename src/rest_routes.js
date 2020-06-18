@@ -1,5 +1,6 @@
 import * as $ from 'jquery';
 
+
 /**
  * Read json from remoteserver
  * @param remoteserver
@@ -24,6 +25,12 @@ const getroutesjson = (remoteserver) => {
   });
 };
 
+//new function with fetch delete querry delete routes ,
+const deleteRoute = (remoteserver,id,cuid) => {
+    return fetch(remoteserver + `/route?id=${id}&cuid=${cuid}`, {
+        method: 'DELETE'
+    }).then(response => response.json);
+};
 /**
  * Post a textfile to the remoteserver
  * @param remoteserver
@@ -63,5 +70,7 @@ const posttextfile = (remoteserver = "", file = "") => {
   });
 };
 
-//expose ajax functions
-export {getroutesjson, posttextfile};
+
+
+  //expose ajax functions
+export {getroutesjson, posttextfile,deleteRoute};
